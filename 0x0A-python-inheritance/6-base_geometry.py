@@ -7,9 +7,8 @@ module with class BaseGeometry
 
 
 class BaseGeometry:
-    """BaseGeometry class"""
+    """Represent base geometry"""
 
-    @classmethod
     def area(self):
         """method for calculated area"""
                                     

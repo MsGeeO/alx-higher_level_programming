@@ -10,19 +10,21 @@ module with class BaseGeometry
 class Rectangle(BaseGeometry):
     """Rectangle class that inherits from BaseGeometry"""
 
-    def __init__(self, width, height):
-        """Method for initialized the attrubutes"""
-        self.integer_validator("width", width)
-        self.__width = width
-        self.integer_validator("height", height)
-        self.__height = height
+    Args:
+        width (int): The width of the new Rectangle
+        height (int): The height of the new Rectangle
+    """
+    super().integer_validator("width", width)
+    self.__width = width
+    super().integer_validator("height", height)
+    self.__height = height
     
     def area(self):
-        """Method to redefine a area method in the parent class"""
-           
+        """Return the area of the rectangle."""
         return self.__width * self.__height
 
     def __str__(self):
-        """__str__ method for return the next string"""
-                                                       
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        """Return the print() and str() representation of a Rectangle."""
+        string = "[" + str(self._class_._name_) + "]"
+        string += str(self._width) + "/" + str(self._height)
+        return string
